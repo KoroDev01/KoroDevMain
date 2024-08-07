@@ -25,12 +25,12 @@
   header {
     background: var(--gris);
     height: 100%;
-    min-height: 100%;
+    max-height: 100%;
     position: fixed;
-    width: 15vw;
-    border-right: black solid 3px;
+    border-right: #000000 1px solid;
+    width: 16vw;
     z-index: 9999;
-
+    font-family: var(--font-family4);
     @include md {
       display: none;
     }
@@ -49,27 +49,26 @@
       text-align: center;
       font-size: 1.9rem;
       font-family: var(--font-family4);
-      color: white;
       padding-bottom: 10rem;
       ul {
         li {
-          padding-bottom: 20px;
+          padding-bottom: 10px;
           list-style: none;
           transition: font-size 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
           &:hover {
             font-size: 2.5rem;
-
-            color: #fff;
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 4px;
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-              0 0 40px #ffffff, 0 0 70px #fefdfe, 0 0 80px #fbf7fb,
-              0 0 100px #fffeff;
+            text-shadow: 0 0 10px #b1adad, 0 0 20px #b1adad, 0 0 30px #b1adad,
+              0 0 40px #b1adad, 0 0 70px #b1adad, 0 0 80px #b1adad,
+              0 0 100px #b1adad;
           }
           a {
+            color: #ffffff;
             i {
               padding-right: 0.5rem;
+              color: #ffffff;
             }
           }
         }
@@ -79,7 +78,7 @@
       font-size: 2rem;
       width: 100%;
       h2 {
-        color: white;
+        color: var(--blanc);
         font-family: var(--font-family4);
         font-size: 2.1rem;
         text-align: center;
@@ -94,14 +93,15 @@
             width: 100%;
             display: flex;
             transition: font-size 0.1s ease-in-out, text-shadow 0.1s ease-in-out;
+            color: var(--blanc);
             &:hover {
               font-size: 2.5rem;
-              color: #fff;
+              color: var(--blanc);
               text-align: center;
               text-transform: uppercase;
               letter-spacing: 4px;
-              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-                0 0 40px #ffffff, 0 0 70px #fefdfe, 0 0 80px #fbf7fb,
+              text-shadow: 0 0 10px #070606, 0 0 20px #000000, 0 0 30px #000000,
+                0 0 40px #050404, 0 0 70px #020102, 0 0 80px #000000,
                 0 0 100px #fffeff;
             }
           }
@@ -124,7 +124,7 @@
       padding-left: 0;
     }
     .home {
-      background: url(/img/background.avif) center/cover;
+      background: url(/img/backg.avif) center/cover;
       height: 100vh;
       min-height: 100vh;
       width: 100%;
@@ -134,7 +134,7 @@
       align-items: center;
       border-bottom: var(--grisclair) 2px solid;
       #menu-icon {
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: 50px;
         cursor: pointer;
         position: fixed;
@@ -160,7 +160,7 @@
       #text-container {
         font-family: monospace;
         font-size: 40px;
-        color: #ff014f;
+        color: #01b7ff;
         white-space: nowrap;
         overflow: hidden;
         border-right: 2px solid #f5f5f5;
@@ -168,7 +168,6 @@
           font-size: 10px;
         }
       }
-
       p {
         color: white;
         font-weight: 500;
@@ -185,39 +184,42 @@
       background-color: var(--gris);
       text-align: center;
       font-family: var(--font-family4);
-
+      color: var(--blanc);
       .features-content {
-        background-color: var(--gris);
         height: 100%;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        border-bottom: var(--grisclair) 2px solid;
+        border-bottom: var(--blanc) 2px solid;
         padding-bottom: 40px;
+
         @include xs {
           flex-direction: column;
           gap: 20px;
         }
         .item {
-          background-color: var(--grisclair);
+          background-color: #302f2f;
           height: 230px;
           width: 250px;
-          box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 15px 10px rgba(75, 74, 74, 0.1);
           border-radius: 10px;
           text-align: center;
           transition: 0.2s;
-
+          align-content: center;
           &:hover {
             height: 250px;
             width: 270px;
+            background-color: #cac7c7;
+            color: var(--noir);
           }
 
           h2 {
             font-size: 30px;
-
-            margin-bottom: 0.5rem;
-            color: var(--text);
+            color: var(--blanc);
+            &:hover {
+              color: var(--noir);
+            }
           }
           i {
             color: var(--rose);
@@ -236,21 +238,21 @@
       background-color: var(--gris);
       align-items: center;
       padding: 10px 150px;
-      border-bottom: var(--grisclair) 2px solid;
+      border-bottom: var(--gris) 2px solid;
       @include md {
         padding: 10px;
       }
       .skills-nav {
-        background: linear-gradient(to bottom right, #333533, #2a2a29);
+        background: linear-gradient(to bottom, var(--gris), #302f2f);
         height: 100px;
         width: 100%;
-        border: var(--gris) 2px solid;
+        border: #302f2f 2px solid;
         border-radius: 20px;
         box-shadow: 0px 4px 8px #353535;
         padding: 1px;
         @include md {
           display: flex;
-          justify-content: center;
+          justify-content: start;
         }
 
         nav {
@@ -259,16 +261,18 @@
           display: flex;
           border-radius: 20px;
           align-items: center;
-          border: var(--gris) 1px solid;
+          border: #ffffff 1px solid;
           box-shadow: 0 0 10px 1px rgb(230, 221, 221);
 
+          a {
+            color: var(--blanc);
+          }
           h2 {
-            color: #f5f5f5;
+            color: var(--blanc);
           }
         }
       }
       .bars {
-        background: var(--gris);
         height: 100%;
         width: 100%;
         display: flex;
@@ -282,7 +286,7 @@
           padding-top: 60px;
           width: 40%;
           border-radius: 10px;
-
+          color: var(--blanc);
           @include md {
             width: 70%;
           }
@@ -290,7 +294,7 @@
             margin: 2rem 0;
             height: 5px;
             border-radius: 10px;
-            background: linear-gradient(to bottom, #333533, #f5f5f5);
+            background: linear-gradient(to bottom, var(--blanc), var(--blanc));
             position: relative;
 
             .bar-skill-progress {
@@ -300,13 +304,17 @@
               left: 0;
               width: 100%;
               border-radius: 10px;
-              background: linear-gradient(to bottom, var(--rose), #b9068f);
+              background: linear-gradient(
+                to bottom,
+                var(--bleu-ciel),
+                var(--bleu-ciel)
+              );
             }
             .bar-skill-dot {
               position: absolute;
               height: 10px;
               width: 10px;
-              background: white;
+              background: var(--blanc);
               left: calc(100% - 5px);
               top: -2.5px;
               transform: rotate(45deg);
@@ -316,7 +324,7 @@
               top: 20px;
               left: calc(100% - 15px);
               transform: translate(0, -50%);
-              color: white;
+              color: var(--blanc);
               font-size: 20px;
             }
           }
@@ -324,6 +332,7 @@
         .scss {
           width: 50%;
           padding-top: 60px;
+          color: var(--blanc);
           @include md {
             width: 70%;
             padding-top: 0;
@@ -332,7 +341,7 @@
             margin: 2rem 0;
             height: 5px;
             border-radius: 10px;
-            background: linear-gradient(to bottom, #333533, #7e7e7e);
+            background: linear-gradient(to bottom, var(--blanc), var(--blanc));
 
             position: relative;
             .bar-skill-progress {
@@ -342,13 +351,17 @@
               left: 0;
               width: 90%;
               border-radius: 10px;
-              background: linear-gradient(to bottom, var(--rose), #b9068f);
+              background: linear-gradient(
+                to bottom,
+                var(--bleu-ciel),
+                var(--bleu-ciel)
+              );
             }
             .bar-skill-dot {
               position: absolute;
               height: 10px;
               width: 10px;
-              background: white;
+              background: var(--blanc);
               left: calc(90% - 5px);
               top: -2.5px;
               transform: rotate(45deg);
@@ -358,13 +371,14 @@
               top: 20px;
               left: calc(90% - 10px);
               transform: translate(0, -50%);
-              color: white;
+              color: var(--blanc);
               font-size: 20px;
             }
           }
         }
         .js {
           width: 40%;
+          color: var(--blanc);
           @include md {
             width: 70%;
           }
@@ -373,7 +387,7 @@
             height: 5px;
             border-radius: 10px;
             border-radius: 10px;
-            background: linear-gradient(to bottom, #333533, #7e7e7e);
+            background: linear-gradient(to bottom, var(--blanc), var(--blanc));
 
             position: relative;
             .bar-skill-progress {
@@ -383,13 +397,17 @@
               left: 0;
               width: 15%;
               border-radius: 10px;
-              background: linear-gradient(to bottom, var(--rose), #b9068f);
+              background: linear-gradient(
+                to bottom,
+                var(--bleu-ciel),
+                var(--bleu-ciel)
+              );
             }
             .bar-skill-dot {
               position: absolute;
               height: 10px;
               width: 10px;
-              background: white;
+              background: var(--blanc);
               left: calc(15% - 5px);
               top: -2.5px;
               transform: rotate(45deg);
@@ -399,7 +417,7 @@
               top: 20px;
               left: calc(15% - 10px);
               transform: translate(0, -50%);
-              color: white;
+              color: var(--blanc);
               font-size: 20px;
             }
           }
@@ -413,7 +431,10 @@
       flex-direction: column;
       background-color: var(--gris);
       align-items: center;
-      border-bottom: var(--grisclair) 2px solid;
+      border-bottom: var(--gris) 2px solid;
+      h3 {
+        color: var(--blanc);
+      }
       .projects-content {
         height: 100%;
         width: 100%;
@@ -423,18 +444,18 @@
 
         .site {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           justify-content: space-around;
-
           align-items: center;
           flex-wrap: wrap;
           height: 100%;
           width: 100%;
+          max-width: 100%;
           color: #f5f5f5;
 
           .site1 {
-            width: 50%;
-            height: 50%;
+            width: 40%;
+            height: 40%;
             background-color: var(--grisclair);
             box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -473,7 +494,7 @@
 }
 .footer {
   padding-left: 15vw;
-  background-color: var(--gris);
+  background-color: var(--noir);
   height: 10vh;
   width: 100%;
   display: flex;
